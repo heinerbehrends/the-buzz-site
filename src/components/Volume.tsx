@@ -6,7 +6,7 @@ import {
   VolumeBarControls,
 } from "../styles/volumeStyle"
 
-type volumeProps = {
+interface volumeProps {
   volume: number
   setVolume: Function
 }

@@ -2,7 +2,7 @@ import React from "react"
 import Play from "./icons/play.svg"
 import Pause from "./icons/pause.svg"
 
-type playButtonProps = {
+interface playButtonProps {
   paused: boolean
   play: Function
   pause: Function

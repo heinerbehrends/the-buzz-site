@@ -7,7 +7,7 @@ export interface song {
   credits: string
 }
 
-type multiplePlayersProps = {
+interface multiplePlayersProps {
   songs: song[]
 }
 

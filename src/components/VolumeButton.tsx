@@ -4,7 +4,7 @@ import VolumeDown from "../icons/volume_down.svg"
 import VolumeOff from "../icons/volume_mute.svg"
 import VolumeMute from "../icons/volume_off.svg"
 
-export type volumeIconProps = {
+export interface volumeIconProps {
   volume: number
   muted: boolean
   mute: Function
