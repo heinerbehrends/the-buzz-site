@@ -24,6 +24,7 @@
     "normalize.css": "^8.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-hook-form": "^6.11.5",
     "react-use": "^15.3.4",
     "styled-components": "^5.2.1",
     "typeface-roboto": "^1.1.13",
