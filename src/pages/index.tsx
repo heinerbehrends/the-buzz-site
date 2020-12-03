@@ -1,5 +1,4 @@
 import React from "react"
-import { BackgroundStyled } from "../components/BackgroundImage"
 import VideoWall from "../components/VideoWall"
 import Header from "../components/Header"
 import { MainHeading, ConnectHeading } from "../styles/headingStyles"
