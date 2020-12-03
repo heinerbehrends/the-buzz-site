@@ -1,5 +1,6 @@
 import React from "react"
 import { BackgroundStyled } from "../components/BackgroundImage"
+import VideoWall from "../components/VideoWall"
 import Header from "../components/Header"
 import { MainHeading, ConnectHeading } from "../styles/headingStyles"
 import Info from "../components/Info"
@@ -15,7 +16,7 @@ export default function Home() {
   return (
     <Container>
       <GlobalStyle />
-      <BackgroundStyled position={scrollTop} />
+      <VideoWall position={scrollTop} />
       <MainContainer>
         <Header />
         <MainHeading>what's the Buzz all about?</MainHeading>
