@@ -8,7 +8,7 @@ interface playButtonProps {
   pause: Function
   setIsPlaying: Function
   id: number
-  className: string
+  className?: string
 }
 
 function PlayButton({

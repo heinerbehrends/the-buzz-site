@@ -29,7 +29,7 @@ interface volumeButtonProps {
   muted: boolean
   mute: Function
   unmute: Function
-  className: string
+  className?: string
 }
 
 export default function VolumeButton({
