@@ -58,7 +58,7 @@ export default function VideoWall({ position }: videoWallProps): JSX.Element {
       style={{
         gridArea: "1 / 1",
         zIndex: -1,
-        transition: "transform 0.1s",
+        // transition: "transform 0.05s",
         transform: `translateY(${-0.1 * position}px)`,
       }}
     >
