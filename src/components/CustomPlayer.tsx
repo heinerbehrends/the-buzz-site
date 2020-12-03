@@ -1,11 +1,10 @@
 import React from "react"
 import useAudio from "react-use/lib/useAudio"
 import ProgressBar from "./ProgressBar"
-import PlayButton from "./PlayButton"
-import TimeDisplay from "./TimeDisplay"
 import Volume from "./Volume"
-import VolumeButton from "./VolumeButton"
 import { PlayerContainer } from "../styles/playerGradientStyles"
+import { PlayButtonStyled, VolumeButtonStyled } from "../styles/buttonStyles"
+import { TimeDisplayStyled } from "../styles/playerStyles"
 
 function getBufferdTime(bufferState: any[]) {
   if (!bufferState[0]) {
@@ -14,7 +13,7 @@ function getBufferdTime(bufferState: any[]) {
   return bufferState[bufferState.length - 1].end
 }
 
-type customPlayerProps = {
+interface customPlayerProps {
   audioFile: string
   id: number
   isPlaying: null | number
@@ -38,14 +37,14 @@ export default function CustomPlayer({
   return (
     <>
       <PlayerContainer>
-        <PlayButton
+        <PlayButtonStyled
           paused={paused}
           play={play}
           pause={pause}
           setIsPlaying={setIsPlaying}
           id={id}
         />
-        <TimeDisplay
+        <TimeDisplayStyled
           style={{
             marginRight: "16px",
             fontWeight: 500,
@@ -59,8 +58,8 @@ export default function CustomPlayer({
           seek={seek}
           duration={duration}
         />
-        <TimeDisplay time={duration} />
-        <VolumeButton
+        <TimeDisplayStyled time={duration} />
+        <VolumeButtonStyled
           muted={muted}
           mute={mute}
           unmute={unmute}
