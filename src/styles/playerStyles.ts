@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import TimeDisplay from "../components/TimeDisplay";
 
 export const Credits = styled.p`
   color: rgba(256, 256, 256, 0.8);
@@ -28,3 +29,9 @@ export const DownloadLink = styled.a`
     font-size: 18px;
   }
 `
+
+export const TimeDisplayStyled = styled(TimeDisplay)`
+  margin-right: 16px;
+  font-weight: 500;
+  text-shadow: 0.05em 0.05em 0.03em #000;
+`;
