@@ -8,11 +8,11 @@ export function ErrorMessage({ children }: errorMessageProps): JSX.Element {
   )
 }
 
-type errorMessageProps = {
+interface errorMessageProps {
   children?: any
 }
 
-type labelProps = {
+interface labelProps {
   for: string
   children?: any
 }
