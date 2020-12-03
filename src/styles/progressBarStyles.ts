@@ -55,7 +55,7 @@ export const TimeHandle = styled.span<timeHandleProps>`
   z-index: 4;
   width: 16px;
   height: 16px;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: #fff;
   transform: translateX(${props => props.offset});
   left: ${props => props.elapsed}%;
