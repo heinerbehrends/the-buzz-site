@@ -24,14 +24,23 @@ export function VolumeIcon({ volume, muted }: volumeIconProps) {
   return <VolumeUp />
 }
 
+interface volumeButtonProps {
+  volume: number
+  muted: boolean
+  mute: Function
+  unmute: Function
+  className: string
+}
+
 export default function VolumeButton({
   muted,
   mute,
   unmute,
   volume,
-}: volumeIconProps) {
+  className,
+}: volumeButtonProps) {
   return (
-    <button onClick={() => (muted ? unmute() : mute())} style={{}}>
+    <button onClick={() => (muted ? unmute() : mute())} className={className}>
       <VolumeIcon volume={volume} muted={muted} unmute={unmute} mute={mute} />
     </button>
   )
