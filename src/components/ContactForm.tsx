@@ -37,7 +37,6 @@ export default function ContactForm(): JSX.Element {
         <Label for="name">Name</Label>
         <InputStyled
           type="text"
-          autoFocus
           name="name"
           placeholder="Your name"
           ref={register({ required: true, minLength: 2, maxLength: 30 })}
