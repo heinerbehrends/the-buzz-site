@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 500;
     font-size: 3vw;
     color: rgba(256,256,256,0.8);
+    height: 5000px;
 
   }    
   h1, h2, h3 {
