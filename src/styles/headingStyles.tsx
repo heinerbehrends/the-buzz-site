@@ -43,7 +43,7 @@ export const SongTitle = styled.h2`
   font-family: "Rock Salt";
   font-weight: 400;
   font-size: 4vw;
-  padding: 4vw 0 1vw 3.5vw;
+  padding: 2vw 0 1vw 3.5vw;
   text-align: left;
   color: rgba(26, 223, 218, 0.8);
   text-shadow: 0px 0px 0.3em rgba(26, 223, 218, 1), 0px 0px 1em rgba(0, 0, 0, 1);
