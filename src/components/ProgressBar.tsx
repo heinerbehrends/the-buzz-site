@@ -30,7 +30,7 @@ export default function ProgressBar({
   duration,
 }: statusbarProps): JSX.Element {
   const [offset, setUnthrottledOffset] = useState(0)
-  const setOffset = throttle(setUnthrottledOffset, 200)
+  const setOffset = throttle(setUnthrottledOffset, 500)
   return (
     <ProgressBarContainer>
       <Invisible id="invisible" />
