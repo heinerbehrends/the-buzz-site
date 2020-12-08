@@ -20,7 +20,7 @@ export default function VideoWallPic02() {
   return (
     <Img
       fluid={data.file.childImageSharp.fluid}
-      style={{ zIndex: -2, gridArea: "7 / 1 / 10 / 4" }}
+      style={{ zIndex: -2, gridArea: "5 / 1 / 8 / 4" }}
     />
   )
 }
