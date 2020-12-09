@@ -1,23 +1,27 @@
 import React from "react"
 import styled from "styled-components"
 import SocialContact from "./SocialContact"
-import emailIcon from "../images/buzz-email-66.png"
 import FacebookIcon from "./FacebookIcon"
+import EmailIcon from "./EmailIcon"
 
-const FlexContainer = styled.div`
-  display: flex;
+const FooterContainer = styled.footer`
+  padding-top: 64px;
+  background-color: rgba(0, 0, 0, 0.4);
 `
 
 export default function Footer() {
   return (
-    <>
+    <FooterContainer>
       <SocialContact
-        iconLink={emailIcon}
+        icon={<EmailIcon />}
         link={"mailto:werethebuzz@gmail.com"}
         linkText={"werethebuzz@gmail.com"}
       />
-      <FlexContainer></FlexContainer>
-      <FacebookIcon />
-    </>
+      <SocialContact
+        icon={<FacebookIcon />}
+        link={"https://www.facebook.com/werethebuzz"}
+        linkText={"facebook.com/werethebuzz"}
+      />
+    </FooterContainer>
   )
 }
