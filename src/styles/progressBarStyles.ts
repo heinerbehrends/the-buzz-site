@@ -1,4 +1,4 @@
-import styled, {css, FlattenSimpleInterpolation} from "styled-components"
+import styled, {css} from "styled-components"
 
 
 export const BarStyles = css`
@@ -57,9 +57,12 @@ export const TimeHandle = styled.span<timeHandleProps>`
   height: 16px;
   border-radius: 8px;
   background-color: #fff;
-  transform: translateX(${props => props.offset});
+  transform: translateX(${props => props.offset - 8}px);
   left: ${props => props.elapsed}%;
   cursor: grab;
+  :hover {
+    opacity: 1;
+  }
 `
 
 export const ProgressBarContainer = styled.div`

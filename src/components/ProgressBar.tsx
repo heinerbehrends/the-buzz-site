@@ -1,11 +1,5 @@
 import React, { useState } from "react"
-import {
-  handleDragStart,
-  handleDrag,
-  handleDragEnd,
-  seekTo,
-  throttle,
-} from "../progressBarFunctions"
+import { handleMouseDown, seekTo } from "../progressBarFunctions"
 import {
   ProgressBarContainer,
   Invisible,
@@ -29,8 +23,7 @@ export default function ProgressBar({
   seek,
   duration,
 }: statusbarProps): JSX.Element {
-  const [offset, setUnthrottledOffset] = useState(0)
-  const setOffset = throttle(setUnthrottledOffset, 500)
+  const [offset, setOffset] = useState(0)
   return (
     <ProgressBarContainer>
       <Invisible id="invisible" />
@@ -41,14 +34,10 @@ export default function ProgressBar({
         onClick={event => seekTo({ event, duration, setTime: seek })}
       />
       <TimeHandle
-        draggable
-        onDragStart={handleDragStart}
-        onDrag={event => handleDrag(event, setOffset)}
-        offset={offset}
-        style={{ transform: `translateX(${offset - 8}px)` }}
-        onDragEnd={event =>
-          handleDragEnd({ event, duration, move: setOffset, setTime: seek })
+        onMouseDown={event =>
+          handleMouseDown({ event: event, setOffset, duration, seek })
         }
+        offset={offset}
         elapsed={elapsed}
       />
     </ProgressBarContainer>

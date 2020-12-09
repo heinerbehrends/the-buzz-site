@@ -1,13 +1,14 @@
-
 interface seekToOptions {
   event: React.MouseEvent
   duration: number
   setTime: Function
 }
+
 export function seekTo({ event, duration, setTime }: seekToOptions) {
-  const width = (event.target as HTMLDivElement).offsetWidth
+  const element = event.target as HTMLDivElement
+  const width = element.offsetWidth
   const clickPosition = event.clientX
-  const elementPosition = (event.target as HTMLDivElement).offsetLeft
+  const elementPosition = element.getBoundingClientRect().left
   const timeToSeekTo = ((clickPosition - elementPosition) / width) * duration
 
   setTime(timeToSeekTo)
@@ -16,49 +17,37 @@ export function handleDragStart(event) {
   event.dataTransfer.setDragImage(document.getElementById("invisible"), 0, 0)
 }
 
-export function handleDrag(event: React.DragEvent, move: Function) {
+export function handleMouseDown({event, setOffset, duration, seek}) {
+  event.preventDefault()
   const element = event.target as HTMLSpanElement
-  const parentWidth = element.parentElement.clientWidth
-  const parentPosition = element.parentElement.offsetLeft
-  const currentPosition = event.clientX
-  const initialPosition = element.offsetLeft
-
-  const boundaryLeft = parentPosition - initialPosition
-  const boundaryRight = boundaryLeft + parentWidth
-  const offset = currentPosition - initialPosition
-
-  if (offset < boundaryLeft) {
-    move(boundaryLeft)
-    return
+  const parent = event.target.parentElement as HTMLDivElement
+  const positionOnHandle = event.clientX - element.getBoundingClientRect().left
+  const parentPosition = parent.getBoundingClientRect().left
+  const parentWidth = parent.offsetWidth
+  const positionOnBar = element.offsetLeft - parent.offsetLeft
+  document.addEventListener('mousemove', onMouseMove);
+  document.addEventListener('mouseup', onMouseUp);
+  
+  function onMouseMove(event) {
+    let offset = event.clientX - positionOnHandle - parentPosition - positionOnBar
+    const leftEdge = - positionOnBar
+    const rightEdge = parentWidth - element.offsetWidth - positionOnBar
+    if (offset < leftEdge) {
+      offset = leftEdge
+    } if (offset > rightEdge) {
+      offset = rightEdge
+    }
+    setOffset(offset)
   }
-  if (offset > boundaryRight) {
-    move(boundaryRight)
-    return
+  function onMouseUp(event) {
+    document.removeEventListener('mousemove', onMouseMove)
+    document.removeEventListener('mouseup', onMouseUp)
+    const clickPosition = event.clientX
+    const timeToSeekTo = ((clickPosition - parentPosition) / parentWidth) * duration
+    setOffset(0)
+    seek(timeToSeekTo)
   }
-  move(offset)
 }
-
-interface handleDragEndOptions {
-  event: React.DragEvent
-  duration: number
-  setTime: Function
-  move: Function
-}
-export function handleDragEnd({
-  event,
-  duration,
-  setTime,
-  move,
-}: handleDragEndOptions) {
-  const width = (event.target as HTMLSpanElement).parentElement.clientWidth
-  const clickPosition = event.clientX
-  const elementPosition = (event.target as HTMLSpanElement).parentElement
-    .offsetLeft
-  const timeToSeekTo = ((clickPosition - elementPosition) / width) * duration
-  setTime(timeToSeekTo)
-  move(0)
-}
-
 export function throttle(fn: Function, time: number): Function {
   let isWaiting = false
   return function (...args) {
