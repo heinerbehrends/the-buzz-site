@@ -5,7 +5,6 @@ import Volume from "./Volume"
 import { PlayerContainer } from "../styles/playerGradientStyles"
 import { PlayButtonStyled, VolumeButtonStyled } from "../styles/buttonStyles"
 import { TimeDisplayStyled } from "../styles/playerStyles"
-import { useRef } from "react"
 
 function getBufferdTime(bufferState: any[]) {
   if (!bufferState[0]) {
@@ -71,6 +70,8 @@ function playNextSong(event) {
   const nextPlayer = document.getElementById(
     `${Number(playerId) + 1}`
   ) as HTMLAudioElement
-  const button = nextPlayer.parentNode.firstChild as HTMLButtonElement
-  button.click()
+  if (nextPlayer) {
+    const button = nextPlayer.parentNode.firstChild as HTMLButtonElement
+    button.click()
+  }
 }
