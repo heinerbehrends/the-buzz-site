@@ -6,7 +6,7 @@ export default function EmailIcon() {
   const data = useStaticQuery(
     graphql`
       query {
-        file(relativePath: { eq: "buzz-email-66.png" }) {
+        file(relativePath: { eq: "the-buzz-email.png" }) {
           id
           childImageSharp {
             fluid(maxWidth: 120) {
@@ -18,9 +18,8 @@ export default function EmailIcon() {
     `
   )
   return (
-    <Img
-      fluid={data.file.childImageSharp.fluid}
-      imgStyle={{ height: "120px", objectFit: "contain" }}
-    />
+    <div style={{ width: "120px", height: "100px" }}>
+      <Img fluid={data.file.childImageSharp.fluid} style={{ padding: 0 }} />
+    </div>
   )
 }

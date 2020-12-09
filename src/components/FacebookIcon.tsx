@@ -6,7 +6,7 @@ export default function FacebookIcon() {
   const data = useStaticQuery(
     graphql`
       query {
-        file(relativePath: { eq: "buzz-facebook-66.png" }) {
+        file(relativePath: { eq: "the-buzz-facebook.png" }) {
           id
           childImageSharp {
             fluid(maxWidth: 120) {
@@ -19,9 +19,8 @@ export default function FacebookIcon() {
   )
 
   return (
-    <Img
-      fluid={data.file.childImageSharp.fluid}
-      imgStyle={{ height: "120px", objectFit: "contain" }}
-    />
+    <div style={{ width: "50px", height: "100px" }}>
+      <Img fluid={data.file.childImageSharp.fluid} style={{ padding: 0 }} />
+    </div>
   )
 }
