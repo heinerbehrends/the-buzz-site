@@ -5,6 +5,7 @@ import Volume from "./Volume"
 import { PlayerContainer } from "../styles/playerGradientStyles"
 import { PlayButtonStyled, VolumeButtonStyled } from "../styles/buttonStyles"
 import { TimeDisplayStyled } from "../styles/playerStyles"
+import { useRef } from "react"
 
 function getBufferdTime(bufferState: any[]) {
   if (!bufferState[0]) {
@@ -27,7 +28,7 @@ export default function CustomPlayer({
   setIsPlaying,
 }: customPlayerProps): JSX.Element {
   const [audio, state, controls] = useAudio(
-    <audio id={`${id}`} src={audioFile} />
+    <audio onEnded={playNextSong} id={`${id}`} src={audioFile} />
   )
   const { paused, time, duration, buffered, volume, muted } = state
   const { play, pause, seek, volume: setVolume, unmute, mute } = controls
@@ -59,8 +60,17 @@ export default function CustomPlayer({
           volume={volume}
         />
         <Volume volume={volume} setVolume={setVolume} />
+        {audio}
       </PlayerContainer>
-      {audio}
     </>
   )
+}
+
+function playNextSong(event) {
+  const playerId = event.target.getAttribute("id")
+  const nextPlayer = document.getElementById(
+    `${Number(playerId) + 1}`
+  ) as HTMLAudioElement
+  const button = nextPlayer.parentNode.firstChild as HTMLButtonElement
+  button.click()
 }
