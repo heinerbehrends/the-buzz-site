@@ -44,14 +44,7 @@ export default function CustomPlayer({
           setIsPlaying={setIsPlaying}
           id={id}
         />
-        <TimeDisplayStyled
-          style={{
-            marginRight: "16px",
-            fontWeight: 500,
-            textShadow: "0.05em 0.05em 0.03em #000",
-          }}
-          time={time}
-        />
+        <TimeDisplayStyled time={time} />
         <ProgressBar
           elapsed={percentElapsed}
           buffered={percentBuffered}
