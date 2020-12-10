@@ -22,13 +22,9 @@ ${BarStyles}
   background-color: darkergray;
 `
 
-interface elapsedBarProps {
-  elapsed: number
-}
-export const ElapsedBar = styled.div<elapsedBarProps>`
+export const ElapsedBar = styled.div`
   ${BarStyles}
   z-index: 2;
-  width: ${props => props.elapsed}%;
   background-color: gainsboro;
   box-shadow: var(--white-glow);
 `

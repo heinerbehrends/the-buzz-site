@@ -32,7 +32,7 @@ export default function ProgressBar({
       <Invisible id="invisible" />
       <BackgroundBar />
       <BufferedBar buffered={buffered} />
-      <ElapsedBar elapsed={elapsed} id={`elapsed${id}`} />
+      <ElapsedBar id={`elapsed${id}`} style={{ width: `${elapsed}%` }} />
       <ClickableBar
         onClick={event => seekTo({ event, duration, setTime: seek })}
       />
