@@ -1,18 +1,25 @@
 import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
+  :root {
+    --primary-color: rgba(26, 223, 218, 0.8);
+    --primary-glow: 0px 0px 0.3em rgba(26, 223, 218, 0.8);
+    --white-color: rgba(256,256,256,0.8);
+    --white-glow: 0px 0px 0.2em rgb(256, 256, 256);
+  }
   body {
     background-color: black;
     font-family: Roboto;
     font-weight: 500;
     font-size: 3vw;
     color: rgba(256,256,256,0.8);
+    text-shadow: 0.05em 0.05em 0.03em #000;
     height: 3000px;
 
   }    
   h1, h2, h3 {
-    color: rgba(26, 223, 218, 0.7);
-    text-shadow: 0px 0px 0.3em rgba(26, 223, 218, 0.8);
+    color: var(--primary-color);
+    text-shadow: var(--primary-glow);
   }
 
   @media screen and (min-width: 768px) {

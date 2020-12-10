@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { handleMouseDown, seekTo } from "../progressBarFunctions"
+import { handleMouseDown, seekTo, throttle } from "../progressBarFunctions"
 import {
   ProgressBarContainer,
   Invisible,
@@ -15,6 +15,7 @@ interface statusbarProps {
   elapsed: number
   duration: number
   seek: Function
+  id: number
 }
 
 export default function ProgressBar({
@@ -22,20 +23,22 @@ export default function ProgressBar({
   elapsed,
   seek,
   duration,
+  id,
 }: statusbarProps): JSX.Element {
-  const [offset, setOffset] = useState(0)
+  const [offset, setOffsetUnthrottled] = useState(0)
+  const setOffset = throttle(setOffsetUnthrottled, 500)
   return (
     <ProgressBarContainer>
       <Invisible id="invisible" />
       <BackgroundBar />
       <BufferedBar buffered={buffered} />
-      <ElapsedBar elapsed={elapsed} />
+      <ElapsedBar elapsed={elapsed} style={{ width: `${elapsed}%` }} />
       <ClickableBar
         onClick={event => seekTo({ event, duration, setTime: seek })}
       />
       <TimeHandle
         onMouseDown={event =>
-          handleMouseDown({ event: event, setOffset, duration, seek })
+          handleMouseDown({ event, setOffset: setOffset, duration, seek })
         }
         offset={offset}
         elapsed={elapsed}

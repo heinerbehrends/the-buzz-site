@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
+import { hoverStyle } from "../styles/playerStyles"
 
-const FlexContainer = styled.div`
+const SocialContainer = styled.div`
   display: flex;
   margin-top: 32px;
   place-content: center;
@@ -13,19 +14,19 @@ const FlexContainer = styled.div`
   a {
     padding-left: 16px;
     color: rgba(256, 256, 256, 0.8);
-    text-shadow: 0.05em 0.05em 0.03em #000;
     text-decoration: none;
-    :hover {
-      text-decoration: underline;
+    ${hoverStyle}
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
     }
   }
 `
 
 export default function SocialContact({ icon, link, linkText }) {
   return (
-    <FlexContainer>
+    <SocialContainer>
       {icon}
       <a href={link}>{linkText}</a>
-    </FlexContainer>
+    </SocialContainer>
   )
 }

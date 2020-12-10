@@ -46,6 +46,7 @@ export default function CustomPlayer({
         />
         <TimeDisplayStyled time={time} />
         <ProgressBar
+          id={id}
           elapsed={percentElapsed}
           buffered={percentBuffered}
           seek={seek}
@@ -66,12 +67,15 @@ export default function CustomPlayer({
 }
 
 function playNextSong(event) {
+  // Get song number
   const playerId = event.target.getAttribute("id")
-  const nextPlayer = document.getElementById(
-    `${Number(playerId) + 1}`
-  ) as HTMLAudioElement
-  if (nextPlayer) {
-    const button = nextPlayer.parentNode.firstChild as HTMLButtonElement
+  // select the next and click it if is exists
+  const button = document.getElementById(`${Number(playerId) + 1}`).parentNode
+    .firstChild as HTMLButtonElement
+  if (button) {
     button.click()
   }
+  // reset elapsed bar
+  console.log(playerId)
+  document.getElementById(`elapsed${playerId}`).style.width = "0%"
 }

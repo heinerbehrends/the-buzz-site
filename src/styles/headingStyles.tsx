@@ -7,8 +7,8 @@ export const MainHeading = styled.h1`
   font-weight: 800;
   text-align: center;
   letter-spacing: -0.07em;
-  color: rgba(26, 223, 218, 0.7);
-  text-shadow: 0px 0px 0.3em rgba(26, 223, 218, 0.8);
+  color: var(--primary-color);
+  text-shadow: var(--primary-glow);
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 1) 0%,
@@ -25,8 +25,8 @@ export const ConnectHeading = styled.h3`
   letter-spacing: -0.07em;
   margin: 0;
   padding-top: 4rem;
-  color: rgba(26, 223, 218, 0.7);
-  text-shadow: 0px 0px 0.3em rgba(26, 223, 218, 0.8);
+  color: var(--primary-color);
+  text-shadow: var(--primary-glow);
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.2) 0%,
@@ -45,7 +45,7 @@ export const SongTitle = styled.h2`
   font-size: 4vw;
   padding: 2vw 0 1vw 3.5vw;
   text-align: left;
-  color: rgba(26, 223, 218, 0.8);
+  color: var(--primary-color);
   text-shadow: 0px 0px 0.3em rgba(26, 223, 218, 1), 0px 0px 1em rgba(0, 0, 0, 1);
   background: linear-gradient(
     180deg,

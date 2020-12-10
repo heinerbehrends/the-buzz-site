@@ -16,6 +16,7 @@ export const VolumeBar = styled.div<volumeBarProps>`
   z-index: 2;
   width: ${props => props.volume * 100}%;
   background-color: gainsboro;
+  box-shadow: var(--white-glow);
 `
 export const VolumeBarBackground = styled.div`
   ${BarStyles}
