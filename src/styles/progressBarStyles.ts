@@ -24,7 +24,6 @@ ${BarStyles}
 
 interface elapsedBarProps {
   elapsed: number
-  style: React.StyleHTMLAttributes<HTMLElement>
 }
 export const ElapsedBar = styled.div<elapsedBarProps>`
   ${BarStyles}
