@@ -25,6 +25,7 @@ export default function VideoWallNoise({
     <Img
       fluid={data.file.childImageSharp.fluid}
       style={{ zIndex: -3, gridArea: `${row} / ${column}` }}
+      loading={"eager"}
     />
   )
 }

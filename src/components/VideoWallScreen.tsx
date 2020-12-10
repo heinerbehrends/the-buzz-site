@@ -26,6 +26,7 @@ export default function VideoWallScreen({ row, column }: videoWallScreenProps) {
     <Img
       fluid={data.file.childImageSharp.fluid}
       style={{ zIndex: -1, gridArea: `${row} / ${column}` }}
+      loading={"eager"}
     />
   )
 }
