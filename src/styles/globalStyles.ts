@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 3vw;
     color: rgba(256,256,256,0.8);
     text-shadow: 0.05em 0.05em 0.03em #000;
-    height: 3000px;
+    height: 2100px;
 
   }    
   h1, h2, h3 {

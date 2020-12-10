@@ -8,9 +8,9 @@ import MultiplePlayers from "../components/MultiplePlayers"
 import ContactForm from "../components/ContactForm"
 import { GlobalStyle } from "../styles/globalStyles"
 import { MainContainer } from "../styles/pageStyles"
-import { useScroll } from "../utils/useScroll"
-import { songs } from "../songs"
 import Footer from "../components/Footer"
+import { songs } from "../songs"
+import useParallax from "../utils/useParallax"
 
 const FixedContainer = styled.div`
   position: fixed;
@@ -21,15 +21,15 @@ const FixedContainer = styled.div`
 `
 
 export default function Home() {
-  const scrollTop = useScroll()
+  useParallax()
   return (
     <>
       <GlobalStyle />
       <FixedContainer>
-        <VideoWall position={scrollTop} />
+        <VideoWall id={"background"} />
       </FixedContainer>
       <FixedContainer>
-        <MainContainer position={scrollTop}>
+        <MainContainer id={"foreground"}>
           <Header />
           <MainHeading>what's the Buzz all about?</MainHeading>
           <Info />
