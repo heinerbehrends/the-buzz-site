@@ -22,9 +22,10 @@ export default function Volume({
 
       <VolumeBarControls
         onClick={event => {
-          const width = (event.target as HTMLDivElement).offsetWidth
+          const element = event.target as HTMLDivElement
+          const width = element.offsetWidth
           const clickPosition = event.clientX
-          const elementPosition = (event.target as HTMLDivElement).offsetLeft
+          const elementPosition = element.getBoundingClientRect().left
           const newVolume = (clickPosition - elementPosition) / width
           setVolume(newVolume)
         }}
