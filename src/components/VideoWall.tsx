@@ -8,7 +8,7 @@ import VideoWallPic03 from "./VideoWallPic03"
 import VideoWallPic04 from "./VideoWallPic04"
 
 interface videoContainerProps {
-  position: number
+  id: string
 }
 
 const VideoWallContainer = styled.div<videoContainerProps>`
@@ -20,7 +20,6 @@ const VideoWallContainer = styled.div<videoContainerProps>`
   grid-area: 1 / 1;
   z-index: -1;
   will-change: transform;
-  transform: translate3d(0, ${props => props.position * -0.6}px, 0);
 `
 
 interface screensProps {
@@ -59,12 +58,12 @@ function NoiseScreens({ columns, rows }: screensProps): JSX.Element {
 }
 
 interface videoWallProps {
-  position: number
+  id: string
 }
 
-export default function VideoWall({ position }: videoWallProps): JSX.Element {
+export default function VideoWall({ id }: videoWallProps): JSX.Element {
   return (
-    <VideoWallContainer position={position}>
+    <VideoWallContainer id={id}>
       <Screens columns={4} rows={13} />
       <VideoWallPic01 />
       {/* <VideoWallPic02 /> */}

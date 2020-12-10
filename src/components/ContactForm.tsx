@@ -5,6 +5,7 @@ import {
   NetlifyFormStyled,
   FlexColumnContainer,
   InputStyled,
+  ButtonStyled,
 } from "../styles/contactFormStyles"
 
 export function NetlifyForm({ children, ...rest }): JSX.Element {
@@ -74,15 +75,9 @@ export default function ContactForm(): JSX.Element {
         {errors.message && (
           <ErrorMessage>Het bericht is te kort of te lang</ErrorMessage>
         )}
-        <InputStyled
-          as="button"
-          type="submit"
-          style={{
-            marginTop: "64px",
-          }}
-        >
+        <ButtonStyled as="button" type="submit">
           SEND
-        </InputStyled>
+        </ButtonStyled>
       </FlexColumnContainer>
     </NetlifyFormStyled>
   )

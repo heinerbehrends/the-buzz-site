@@ -6,7 +6,7 @@ export const Container = styled.div`
   margin: 0 auto;
 `
 interface mainContainerProps {
-  position: number
+  id: string
 }
 
 export const MainContainer = styled.div<mainContainerProps>`
@@ -14,5 +14,4 @@ export const MainContainer = styled.div<mainContainerProps>`
   max-width: 768px;
   margin: 0 auto;
   will-change: transform;
-  transform: translate3d(0,${props => props.position * -1}px, 0);
 `

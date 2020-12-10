@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import TimeDisplay from "../components/TimeDisplay";
 
 export const Credits = styled.p`
@@ -16,15 +16,17 @@ export const Credits = styled.p`
     padding-right: 28px;
   }
 `
+export const hoverStyle = css`
+  :hover {
+    text-shadow: var(--white-glow);
+  }
+`
 
 export const DownloadLink = styled.a`
   color: rgba(256, 256, 256, 0.8);
   padding-left: 3.5vw;
   text-decoration: none;
-  text-shadow: 0.05em 0.05em 0.03em #000;
-  :hover {
-    text-shadow: 0px 0px 0.2em rgb(256, 256, 256);
-  }
+   ${hoverStyle}
   @media screen and (min-width: 768px) {
     font-size: 18px;
   }
@@ -33,5 +35,4 @@ export const DownloadLink = styled.a`
 export const TimeDisplayStyled = styled(TimeDisplay)`
   margin-right: 16px;
   font-weight: 500;
-  text-shadow: 0.05em 0.05em 0.03em #000;
-`;
+ `;

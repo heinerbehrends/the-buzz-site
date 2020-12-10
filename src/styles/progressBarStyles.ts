@@ -19,17 +19,19 @@ export const BufferedBar = styled.div<bufferedBarProps>`
 ${BarStyles}
   z-index: 1;
   width: ${props => props.buffered}%;
-  background-color: darkgray;
+  background-color: darkergray;
 `
 
 interface elapsedBarProps {
   elapsed: number
+  style: React.StyleHTMLAttributes<HTMLElement>
 }
 export const ElapsedBar = styled.div<elapsedBarProps>`
-${BarStyles}
+  ${BarStyles}
   z-index: 2;
   width: ${props => props.elapsed}%;
   background-color: gainsboro;
+  box-shadow: var(--white-glow);
 `
 export const ClickableBar = styled.div`
 ${BarStyles}
@@ -56,7 +58,7 @@ export const TimeHandle = styled.span<timeHandleProps>`
   width: 16px;
   height: 16px;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: var(--white-color);
   transform: translateX(${props => props.offset - 8}px);
   left: ${props => props.elapsed}%;
   cursor: grab;
