@@ -24,6 +24,5 @@ export const PlayButtonStyled = styled(PlayButton)`
 `
 export const VolumeButtonStyled = styled(VolumeButton)`
   ${sharedButtonStyles}
-  height: 48px;
   padding: 8px 12px 8px 0px;
 `
