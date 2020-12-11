@@ -15,7 +15,6 @@ interface statusbarProps {
   elapsed: number
   duration: number
   seek: Function
-  id: number
 }
 
 export default function ProgressBar({
@@ -23,7 +22,6 @@ export default function ProgressBar({
   elapsed,
   seek,
   duration,
-  id,
 }: statusbarProps): JSX.Element {
   const [offset, setOffsetUnthrottled] = useState(0)
   const setOffset = throttle(setOffsetUnthrottled, 500)
@@ -32,7 +30,7 @@ export default function ProgressBar({
       <Invisible id="invisible" />
       <BackgroundBar />
       <BufferedBar buffered={buffered} />
-      <ElapsedBar id={`elapsed${id}`} style={{ width: `${elapsed}%` }} />
+      <ElapsedBar style={{ width: `${elapsed}%` }} />
       <ClickableBar
         onClick={event => seekTo({ event, duration, setTime: seek })}
       />
