@@ -44,6 +44,10 @@ export const InputStyled = styled.input<inputProps>`
 
 export const ButtonStyled = styled(InputStyled)`
   margin-top: 64px;
+  font-size: max(3vw, 18px);
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
   letter-spacing: 0.1rem;
   ${hoverStyle}
 `
