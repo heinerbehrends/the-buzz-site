@@ -18,7 +18,7 @@ export default function EmailIcon() {
     `
   )
   return (
-    <div style={{ width: "120px", height: "100px" }}>
+    <div style={{ width: "60px", height: "50px" }}>
       <Img fluid={data.file.childImageSharp.fluid} style={{ padding: 0 }} />
     </div>
   )

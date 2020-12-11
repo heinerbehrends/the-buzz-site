@@ -19,7 +19,7 @@ export default function FacebookIcon() {
   )
 
   return (
-    <div style={{ width: "50px", height: "100px" }}>
+    <div style={{ width: "25px", height: "50px" }}>
       <Img fluid={data.file.childImageSharp.fluid} style={{ padding: 0 }} />
     </div>
   )
