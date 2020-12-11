@@ -11,11 +11,13 @@ export const GlobalStyle = createGlobalStyle`
     background-color: black;
     font-family: Roboto;
     font-weight: 500;
-    font-size: 3vw;
+    font-size: max(3vw, 16px);
     color: rgba(256,256,256,0.8);
     text-shadow: 0.05em 0.05em 0.03em #000;
     height: 2100px;
-
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+    }
   }    
   h1, h2, h3 {
     color: var(--primary-color);
@@ -31,11 +33,7 @@ export const GlobalStyle = createGlobalStyle`
       padding: 2px 0 3px 44px;
     }
     p, form {
-    font-size: 24px;
     padding: 0 32px 12px 32px;
-    }
-    span {
-      font-size: 18px;
     }
   }
 `
