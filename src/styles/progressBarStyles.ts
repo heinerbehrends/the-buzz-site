@@ -55,7 +55,7 @@ export const TimeHandle = styled.span<timeHandleProps>`
   border-radius: 8px;
   background-color: var(--white-color);
   transform: translateX(${props => props.offset - 8}px);
-  left: ${props => props.elapsed}%;
+  /* left: ${({elapsed, offset}) => elapsed + offset}%; */
   cursor: grab;
   :hover {
     opacity: 1;

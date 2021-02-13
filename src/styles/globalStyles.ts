@@ -7,6 +7,9 @@ export const GlobalStyle = createGlobalStyle`
     --white-color: rgba(256,256,256,0.8);
     --white-glow: 0px 0px 0.2em rgb(256, 256, 256);
   }
+  html {
+    background-color: black;
+  }
   body {
     background-color: black;
     font-family: Roboto;

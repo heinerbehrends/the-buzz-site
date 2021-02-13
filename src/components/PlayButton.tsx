@@ -27,7 +27,11 @@ function PlayButton({
       }}
       className={className}
     >
-      {paused ? <Play /> : <Pause />}
+      {paused ? (
+        <Play className={className} />
+      ) : (
+        <Pause className={className} />
+      )}
     </button>
   )
 }
