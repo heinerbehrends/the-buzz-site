@@ -2,7 +2,13 @@ import React from "react"
 
 export function ErrorMessage({ children }: errorMessageProps): JSX.Element {
   return (
-    <span style={{ marginLeft: "16px", marginTop: "4px", color: "red" }}>
+    <span
+      style={{
+        marginLeft: "16px",
+        marginTop: "8px",
+        color: "var(--primary-color)",
+      }}
+    >
       {children}
     </span>
   )
