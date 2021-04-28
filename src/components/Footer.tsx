@@ -6,7 +6,12 @@ import EmailIcon from "./EmailIcon"
 
 const FooterContainer = styled.footer`
   padding-top: 64px;
-  background-color: rgba(0, 0, 0, 0.4);
+  padding-bottom: 48px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.01) 100%
+  );
 `
 
 export default function Footer() {
