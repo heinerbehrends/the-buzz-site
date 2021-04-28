@@ -22,7 +22,7 @@ export default function BuzzPlayer({
   setPlayingId,
 }: buzzPlayerProps): JSX.Element {
   return (
-    <>
+    <section>
       <SongTitle>{title}</SongTitle>
       <CustomPlayer
         audioFile={mp3}
@@ -39,6 +39,6 @@ export default function BuzzPlayer({
           <br /> Words by Leon van de Vendel
         </Credits>
       </CreditsContainer>
-    </>
+    </section>
   )
 }
