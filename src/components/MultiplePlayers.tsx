@@ -1,25 +1,21 @@
 import React, { useState } from "react"
 import BuzzPlayer from "./BuzzPlayer"
+import { songs } from "../songs"
 
-export interface song {
+export type song = {
   mp3: string
   title: string
   credits: string
 }
 
-interface multiplePlayersProps {
-  songs: song[]
-}
-
-export default function MultiplePlayers({
-  songs,
-}: multiplePlayersProps): JSX.Element {
+function MultiplePlayers(): JSX.Element {
   const [playingId, setPlayingId] = useState(null)
   return (
-    <>
+    <section>
       {songs.map((song, id) => (
         <BuzzPlayer
           id={id}
+          key={id}
           mp3={song.mp3}
           playingId={playingId}
           setPlayingId={setPlayingId}
@@ -27,6 +23,8 @@ export default function MultiplePlayers({
           credits={song.credits}
         />
       ))}
-    </>
+    </section>
   )
 }
+
+export default MultiplePlayers
