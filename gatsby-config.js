@@ -1,6 +1,11 @@
 const path = require(`path`)
 
 module.exports = {
+  siteMetadata: {
+    title: `We're The Buzz!`,
+    siteUrl: `https://werethebuzz.com`,
+    description: `New Wave from Groningen`,
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
