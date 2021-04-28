@@ -4,7 +4,7 @@ import { hoverStyle } from "../styles/playerStyles"
 
 const SocialContainer = styled.a`
   display: flex;
-  margin-top: 32px;
+  padding-bottom: 32px;
   place-content: center;
   align-items: center;
   justify-content: center;
