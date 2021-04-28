@@ -26,7 +26,7 @@ export function NetlifyForm({ children, ...rest }): JSX.Element {
 
 export default function ContactForm(): JSX.Element {
   const { register, errors } = useForm({
-    mode: "onChange",
+    mode: "onTouched",
     shouldFocusError: true,
   })
 
