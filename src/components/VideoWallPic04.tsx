@@ -10,7 +10,7 @@ export default function VideoWallPic04() {
           id
           childImageSharp {
             fluid(maxWidth: 576) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }

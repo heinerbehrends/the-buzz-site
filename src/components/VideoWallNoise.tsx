@@ -14,7 +14,7 @@ export default function VideoWallNoise({
           id
           childImageSharp {
             fluid(maxWidth: 192) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }
