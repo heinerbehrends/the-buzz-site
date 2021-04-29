@@ -3,10 +3,10 @@ import { BarStyles } from "./progressBarStyles"
 
 export const VolumeBarContainer = styled.div`
   display: grid;
+  margin-right: 3rem;
   width: 120px;
   align-items: center;
   overflow: hidden;
-  margin-right: 28px;
 `
 interface volumeBarProps {
   volume: number
