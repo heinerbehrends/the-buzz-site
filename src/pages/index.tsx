@@ -9,8 +9,8 @@ import ContactForm from "../components/ContactForm"
 import { GlobalStyle } from "../styles/globalStyles"
 import { MainContainer } from "../styles/pageStyles"
 import Footer from "../components/Footer"
-import { songs } from "../songs"
 import useParallax from "../utils/useParallax"
+import useBodySize from "../utils/useBodySize"
 
 const FixedContainer = styled.div`
   position: fixed;
@@ -22,18 +22,23 @@ const FixedContainer = styled.div`
 
 export default function Home() {
   useParallax()
+  const { bodyWidth, bodyHeight } = useBodySize()
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle bodyHeight={bodyHeight} />
       <FixedContainer>
-        <VideoWall id={"background"} />
+        <VideoWall
+          id={"background"}
+          bodyHeight={bodyHeight}
+          bodyWidth={bodyWidth}
+        />
       </FixedContainer>
       <FixedContainer>
         <MainContainer id={"foreground"}>
           <Header />
           <MainHeading>what's the Buzz all about?</MainHeading>
           <Info />
-          <MultiplePlayers songs={songs} />
+          <MultiplePlayers />
           <ConnectHeading>connect with the Buzz</ConnectHeading>
           <ContactForm />
           <Footer />
