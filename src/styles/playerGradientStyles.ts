@@ -1,10 +1,14 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const PlayerContainer = styled.div`
+  padding-left: 1rem;
   display: flex;
+  gap: 16px;
+  @media screen and (min-width: 480px) {
+    gap: 16px;
+  }
   place-items: center;
   width: 100%;
-  margin-right: 2rem;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.4) 0%,
@@ -14,6 +18,7 @@ export const PlayerContainer = styled.div`
 `
 
 export const CreditsContainer = styled.div`
+  padding-left: 2rem;
   display: flex;
   justify-content: space-between;
   background: linear-gradient(
