@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components"
 
-export const GlobalStyle = createGlobalStyle`
+type GlobalStyleProps = {
+  bodyHeight: number
+}
+
+export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   :root {
     --primary-color: rgba(26, 223, 218, 0.8);
     --primary-glow: 0px 0px 0.3em rgba(26, 223, 218, 0.8);
@@ -14,10 +18,10 @@ export const GlobalStyle = createGlobalStyle`
     background-color: black;
     font-family: Roboto;
     font-weight: 500;
-    font-size: max(3vw, 16px);
+    font-size: max(3.1vw, 16px);
     color: rgba(256,256,256,0.8);
     text-shadow: 0.05em 0.05em 0.03em #000;
-    height: 2100px;
+    height: ${props => props.bodyHeight}px;
     @media screen and (min-width: 768px) {
       font-size: 24px;
     }
