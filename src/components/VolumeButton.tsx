@@ -40,7 +40,11 @@ export default function VolumeButton({
   className,
 }: volumeButtonProps) {
   return (
-    <button onClick={() => (muted ? unmute() : mute())} className={className}>
+    <button
+      style={{ padding: "1rem" }}
+      onClick={() => (muted ? unmute() : mute())}
+      className={className}
+    >
       <VolumeIcon volume={volume} muted={muted} unmute={unmute} mute={mute} />
     </button>
   )

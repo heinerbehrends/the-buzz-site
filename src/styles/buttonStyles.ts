@@ -1,12 +1,13 @@
 import styled, { css } from "styled-components"
-import PlayButton from '../components/PlayButton'
-import VolumeButton from '../components/VolumeButton'
-import { hoverStyle } from "./playerStyles";
+import PlayButton from "../components/PlayButton"
+import VolumeButton from "../components/VolumeButton"
+import { hoverStyle } from "./playerStyles"
 
 const sharedButtonStyles = css`
   fill: var(--white-color);
-  width: max(2.2vw,16px);
+  width: max(2.2vw, 16px);
   display: grid;
+  padding: 1vw;
   align-items: center;
   justify-content: center;
   /* place-items: center; */
@@ -24,12 +25,8 @@ const sharedButtonStyles = css`
   }
 `
 export const PlayButtonStyled = styled(PlayButton)`
-  /* height: max(6vw, 24px); */
   ${sharedButtonStyles}
-  padding: 1vw;
-  margin: 0 2vw;
 `
 export const VolumeButtonStyled = styled(VolumeButton)`
   ${sharedButtonStyles}
-  padding: 8px 12px 8px 0px;
 `
