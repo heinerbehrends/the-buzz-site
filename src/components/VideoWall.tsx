@@ -34,6 +34,7 @@ function Screens({ columns, rows }: screensProps): JSX.Element {
         .fill("1")
         .map((el, idx) => (
           <VideoWallScreen
+            key={idx}
             column={(idx % columns) + 1}
             row={Math.floor(idx / columns) + 1}
           />
@@ -49,6 +50,7 @@ function NoiseScreens({ columns, rows }: screensProps): JSX.Element {
         .fill("1")
         .map((el, idx) => (
           <VideoWallNoise
+            key={idx}
             column={(idx % columns) + 1}
             row={Math.floor(idx / columns) + 1}
           />
@@ -59,17 +61,37 @@ function NoiseScreens({ columns, rows }: screensProps): JSX.Element {
 
 interface videoWallProps {
   id: string
+  bodyHeight: number
+  bodyWidth: number
 }
 
-export default function VideoWall({ id }: videoWallProps): JSX.Element {
+function VideoWall({ id, bodyHeight, bodyWidth }: videoWallProps): JSX.Element {
+  function calculateRows(width, height) {
+    const ratio = 1.2522
+    if (!width) {
+      return 1
+    }
+    if (width >= 768) {
+      return Math.floor(height / 153.33)
+    }
+    return Math.floor(width / 4 / ratio)
+  }
+  const rows = calculateRows(bodyWidth, bodyHeight)
   return (
     <VideoWallContainer id={id}>
-      <Screens columns={4} rows={13} />
+      <Screens columns={4} rows={rows} />
       <VideoWallPic01 />
       {/* <VideoWallPic02 /> */}
       <VideoWallPic03 />
       <VideoWallPic04 />
-      <NoiseScreens columns={4} rows={13} />
+      <NoiseScreens columns={4} rows={rows} />
     </VideoWallContainer>
   )
 }
+
+export default React.memo(
+  VideoWall,
+  (prevProps, nextProps) =>
+    prevProps.bodyHeight === nextProps.bodyHeight &&
+    prevProps.bodyWidth === nextProps.bodyWidth
+)
