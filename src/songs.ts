@@ -38,6 +38,4 @@ export const songs: song[] = [
     mp3: gender,
     credits: "Simon Theodorus and Heiner Behrends",
   },
-
-
 ]
