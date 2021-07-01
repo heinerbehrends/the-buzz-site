@@ -2,15 +2,22 @@ import React from "react"
 import CustomPlayer from "./CustomPlayer"
 import { SongTitle } from "../styles/headingStyles"
 import { CreditsContainer } from "../styles/playerGradientStyles"
-import { DownloadLink, Credits } from "../styles/playerStyles"
+import {
+  DownloadLink,
+  Credits,
+  MetaLeftContainer,
+} from "../styles/playerStyles"
+import Heart from "./Heart"
+import { HeartType } from "./MultiplePlayers"
 
-interface buzzPlayerProps {
+type buzzPlayerProps = {
   mp3: string
   title: string
   credits: string
   id: number
   playingId: number
   setPlayingId: Function
+  hearts: number
 }
 
 export default function BuzzPlayer({
@@ -20,9 +27,10 @@ export default function BuzzPlayer({
   id,
   playingId,
   setPlayingId,
+  hearts,
 }: buzzPlayerProps): JSX.Element {
   return (
-    <section>
+    <section id={title.replace(/ /g, "-").toLowerCase()}>
       <SongTitle>{title}</SongTitle>
       <CustomPlayer
         audioFile={mp3}
@@ -31,9 +39,12 @@ export default function BuzzPlayer({
         setIsPlaying={setPlayingId}
       />
       <CreditsContainer>
-        <DownloadLink href={mp3} download>
-          Download mp3
-        </DownloadLink>
+        <MetaLeftContainer>
+          <Heart title={title} count={hearts} />
+          <DownloadLink href={mp3} download>
+            Download
+          </DownloadLink>
+        </MetaLeftContainer>
         <Credits>
           {`Music by ${credits}`}
           <br /> Words by Leon van de Vendel
