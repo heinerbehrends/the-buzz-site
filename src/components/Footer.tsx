@@ -14,7 +14,7 @@ const FooterContainer = styled.footer`
   );
 `
 
-export default function Footer() {
+function Footer() {
   return (
     <FooterContainer>
       <SocialContact
@@ -30,3 +30,5 @@ export default function Footer() {
     </FooterContainer>
   )
 }
+
+export default React.memo(Footer)

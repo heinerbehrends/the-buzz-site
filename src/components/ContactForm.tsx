@@ -8,7 +8,12 @@ import {
   ButtonStyled,
 } from "../styles/contactFormStyles"
 
-export function NetlifyForm({ children, ...rest }): JSX.Element {
+export function NetlifyForm({
+  children,
+  ...rest
+}: {
+  children: React.ReactNode
+}): JSX.Element {
   return (
     <form
       method="POST"
@@ -24,7 +29,7 @@ export function NetlifyForm({ children, ...rest }): JSX.Element {
   )
 }
 
-export default function ContactForm(): JSX.Element {
+function ContactForm(): JSX.Element {
   const { register, errors } = useForm({
     mode: "onTouched",
     shouldFocusError: true,
@@ -82,3 +87,5 @@ export default function ContactForm(): JSX.Element {
     </NetlifyFormStyled>
   )
 }
+
+export default React.memo(ContactForm)
