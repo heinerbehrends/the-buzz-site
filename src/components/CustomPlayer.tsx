@@ -29,7 +29,7 @@ export default function CustomPlayer({
   useEffect(() => {
     const percentElapsed = (time / duration) * 100
     setElapsed(percentElapsed)
-  })
+  }, [time, duration, setElapsed, percentElapsed])
   if (id !== isPlaying) pause()
   return (
     <PlayerContainer>
@@ -60,8 +60,8 @@ function playNextSong(
 ): void {
   const audioElement = event.target as HTMLAudioElement
   const songNumber = audioElement.getAttribute("id")
-  const button = document.getElementById(`${Number(songNumber) + 1}`).parentNode
-    .firstChild as HTMLButtonElement
+  const button = document?.getElementById(`${Number(songNumber) + 1}`)
+    ?.parentNode?.firstChild as HTMLButtonElement
   if (button) {
     button.click()
     button.focus()
