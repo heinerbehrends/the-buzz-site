@@ -11,6 +11,9 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     --white-color: rgba(256,256,256,0.8);
     --white-glow: 0px 0px 0.2em rgb(256, 256, 256);
   }
+  ::selection {
+    background: var(--primary-color)
+  }
   html {
     background-color: black;
   }

@@ -3,8 +3,12 @@ import styled from "styled-components"
 export const PlayerContainer = styled.div`
   padding-left: 1rem;
   display: flex;
-  gap: 16px;
+  gap: 8px;
   @media screen and (min-width: 480px) {
+    gap: 12px;
+  }
+  @media screen and (min-width: 768px) {
+    padding-left: 2rem;
     gap: 16px;
   }
   place-items: center;
@@ -18,7 +22,7 @@ export const PlayerContainer = styled.div`
 `
 
 export const CreditsContainer = styled.div`
-  padding-left: 2rem;
+  padding-left: 1rem;
   display: flex;
   justify-content: space-between;
   background: linear-gradient(
@@ -27,4 +31,7 @@ export const CreditsContainer = styled.div`
     rgba(0, 0, 0, 0.66) 33%,
     rgba(0, 0, 0, 0.2) 100%
   );
+  @media screen and (min-width: 768px) {
+    padding-left: 2rem;
+  }
 `

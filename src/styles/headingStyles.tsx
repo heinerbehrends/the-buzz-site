@@ -43,7 +43,7 @@ export const SongTitle = styled.h2`
   font-family: "Rock Salt";
   font-weight: 400;
   font-size: max(4vw, 20px);
-  padding: 2rem 0 1rem 2rem;
+  padding: 2rem 0 1rem 1rem;
   text-align: left;
   color: var(--primary-color);
   text-shadow: 0px 0px 0.3em rgba(26, 223, 218, 1), 0px 0px 1em rgba(0, 0, 0, 1);
@@ -55,5 +55,6 @@ export const SongTitle = styled.h2`
   );
   @media screen and (min-width: 768px) {
     font-size: 30px;
+    padding-left: 2rem;
   }
 `

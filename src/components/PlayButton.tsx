@@ -21,7 +21,7 @@ function PlayButton({
 }: playButtonProps): JSX.Element {
   return (
     <button
-      style={{ padding: "1rem", paddingLeft: "2rem" }}
+      style={{ padding: "1rem" }}
       onClick={() => {
         paused ? play() : pause()
         setIsPlaying(id)
