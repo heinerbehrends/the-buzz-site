@@ -13,10 +13,16 @@ export default function useParallax() {
     const background = document.getElementById("background")
     const foreground = document.getElementById("foreground")
     function updateScroll() {
+      if (background === null || foreground === null) {
+        console.error(
+          `UseParallax needs elements with id="foreground" and id="background"`
+        )
+        return
+      }
       background.style.transform = `translate3d(0, ${scrollTop * -1}px, 0)`
       foreground.style.transform = `translate3d(0, ${scrollTop * -1.6}px, 0)`
       requestAnimationFrame(updateScroll)
     }
     requestAnimationFrame(updateScroll)
-  }, [scrollTop])
+  }, [scrollTop, setScrollTop])
 }
