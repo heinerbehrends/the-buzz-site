@@ -3,7 +3,7 @@ import styled from "styled-components"
 import VideoWall from "../components/VideoWall"
 import Header from "../components/Header"
 import { MainHeading, ConnectHeading } from "../styles/headingStyles"
-import Info from "../components/Info"
+import Bio from "../components/Bio"
 import MultiplePlayers from "../components/MultiplePlayers"
 import ContactForm from "../components/ContactForm"
 import { GlobalStyle } from "../styles/globalStyles"
@@ -37,7 +37,7 @@ export default function Home() {
         <MainContainer id={"foreground"}>
           <Header />
           <MainHeading>what's the Buzz all about?</MainHeading>
-          <Info />
+          <Bio />
           <MultiplePlayers />
           <ConnectHeading>connect with the Buzz</ConnectHeading>
           <ContactForm />
