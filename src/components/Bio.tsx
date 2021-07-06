@@ -1,7 +1,7 @@
 import React from "react"
 import { Paragraph } from "../styles/paragraphStyles"
 
-export default function Info(): JSX.Element {
+export default function Bio(): JSX.Element {
   return (
     <Paragraph>
       The Buzz’s trademark are songs that are influenced by the post punk and
