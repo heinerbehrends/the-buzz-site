@@ -37,7 +37,6 @@ function MultiplePlayers(): JSX.Element {
           title={song.title}
           credits={song.credits}
           hearts={hearts.find(hearts => hearts.title === song.title)?.count!}
-          setHearts={setHearts}
         />
       ))}
     </section>
