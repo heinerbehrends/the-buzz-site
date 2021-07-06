@@ -40,27 +40,27 @@ export default function Heart({ title, count }: HeartType) {
       ? heartColors.length - 1
       : hearts - count
   return (
-    <HeartContainer>
+    <HeartContainer
+      onClick={(event: React.MouseEvent<HTMLElement>) => {
+        // allow user to add up to 16 hearts
+        if (hearts - count < 17) {
+          updateHearts(event)
+          setHearts(hearts + 1)
+        }
+        return
+      }}
+    >
       <HeartIcon
         style={{
           fill: heartColors[color],
           transform: `scale(1.${hearts - count < 10 ? "0" : ""}${
             hearts - count
           })`,
-          opacity: 0.75,
           marginRight: "8px",
-          filter: `drop-shadow(0 0 2px ${heartColors[color]}) drop-shadow(0 0 4px ${heartColors[color]})`,
-        }}
-        onClick={(event: React.MouseEvent<HTMLElement>) => {
-          // allow user to add up to 16 hearts
-          if (hearts - count < 17) {
-            updateHearts(event)
-            setHearts(hearts + 1)
-          }
-          return
+          opacity: 0.75,
         }}
       />
-      <span style={{ fontSize: "18px" }}>{hearts}</span>
+      <span style={{ fontSize: "18px", color: "white" }}>{hearts}</span>
     </HeartContainer>
   )
 }
