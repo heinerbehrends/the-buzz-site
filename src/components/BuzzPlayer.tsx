@@ -6,6 +6,7 @@ import { PlayerLink, Credits, MetaLeftContainer } from "../styles/playerStyles"
 import Heart from "./Heart"
 import Share from "./Share"
 import Download from "./Download"
+import SongInfo from "./SongInfo"
 
 type BuzzPlayerProps = {
   mp3: string
@@ -40,11 +41,8 @@ export default function BuzzPlayer({
           <Heart title={title} count={hearts} />
           <Share />
           <Download href={mp3} />
+          <SongInfo credits={credits} />
         </MetaLeftContainer>
-        <Credits>
-          {`Music by ${credits}`}
-          <br /> Words by Leon van de Vendel
-        </Credits>
       </CreditsContainer>
     </section>
   )
