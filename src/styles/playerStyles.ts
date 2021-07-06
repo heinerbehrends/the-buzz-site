@@ -17,7 +17,7 @@ export const Credits = styled.p`
 `
 export const hoverStyle = css`
   :hover {
-    text-shadow: var(--white-glow);
+    filter: drop-shadow(0 0 2px white) drop-shadow(0 0 4px white);
   }
 `
 
@@ -28,15 +28,27 @@ const mediumFontSize = css`
   }
 `
 
-export const DownloadLink = styled.a`
+const focusStyle = css`
+  :focus {
+    outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+    text-shadow: none;
+    filter: drop-shadow(0 0 2px white) drop-shadow(0 0 4px white);
+    fill: white;
+  }
+`
+
+export const PlayerLink = styled.a`
   margin-top: 0.25rem;
+  display: inline-block;
   color: rgba(256, 256, 256, 0.8);
   text-decoration: none;
   ${hoverStyle}
+  ${focusStyle}
   ${mediumFontSize}
   @media screen and (min-width: 480px) {
     margin-top: 0;
-    margin-left: 1rem;
   }
 `
 
@@ -52,12 +64,30 @@ export const MetaLeftContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   @media screen and (min-width: 480px) {
     flex-direction: row;
   }
 `
-
-export const HeartContainer = styled.div`
+export const IconButton = styled.button`
+  background-color: transparent;
+  border: none;
   display: flex;
   align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  cursor: pointer;
+  ${hoverStyle}
+  ${focusStyle}
+`
+
+export const HeartContainer = styled.button`
+  display: flex;
+  align-items: center;
+  padding-right: 16px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  ${hoverStyle}
+  ${focusStyle}
 `
