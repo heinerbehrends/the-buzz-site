@@ -25,7 +25,6 @@ export function Background({ position }: backgroundProps): JSX.Element {
         zIndex: -1,
         transition: "transform 0s",
         transform: `translateY(${-0.25 * position}px)`,
-        // maxWidth: "768px",
       }}
       fluid={data.file.childImageSharp.fluid}
     />
