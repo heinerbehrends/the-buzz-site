@@ -3,8 +3,6 @@ import TimeDisplay from "../components/TimeDisplay"
 
 export const Credits = styled.p`
   color: rgba(256, 256, 256, 0.8);
-  text-align: right;
-  text-align: right;
   font-size: max(2.083vw, 12px);
   line-height: 130%;
   padding: 0;
@@ -44,6 +42,7 @@ export const PlayerLink = styled.a`
   display: inline-block;
   color: rgba(256, 256, 256, 0.8);
   text-decoration: none;
+  text-shadow: none;
   ${hoverStyle}
   ${focusStyle}
   ${mediumFontSize}
