@@ -7,15 +7,7 @@ export default function Share() {
 
   return (
     <>
-      <IconButton
-        style={{
-          backgroundColor: "transparent",
-          border: "none",
-          display: "flex",
-          alignItems: "center",
-        }}
-        onClick={() => setIsOpen(!isOpen)}
-      >
+      <IconButton onClick={() => setIsOpen(!isOpen)}>
         <ShareIcon
           style={{
             fill: "white",
@@ -31,6 +23,7 @@ export default function Share() {
           >
             Share on Facebook
           </PlayerLink>
+          <br />
           <PlayerLink
             href="https://twitter.com/intent/tweet?&url=https%3A%2F%2Fmodest-snyder-67ce38.netlify.app%2F&text=New+Wave+from+Groningen&hashtags=band,music,newwave"
             target="_blank"
