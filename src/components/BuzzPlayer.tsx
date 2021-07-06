@@ -2,21 +2,18 @@ import React from "react"
 import CustomPlayer from "./CustomPlayer"
 import { SongTitle } from "../styles/headingStyles"
 import { CreditsContainer } from "../styles/playerGradientStyles"
-import {
-  DownloadLink,
-  Credits,
-  MetaLeftContainer,
-} from "../styles/playerStyles"
+import { PlayerLink, Credits, MetaLeftContainer } from "../styles/playerStyles"
 import Heart from "./Heart"
-import { HeartType } from "./MultiplePlayers"
+import Share from "./Share"
+import Download from "./Download"
 
-type buzzPlayerProps = {
+type BuzzPlayerProps = {
   mp3: string
   title: string
   credits: string
   id: number
   playingId: number
-  setPlayingId: Function
+  setPlayingId: React.Dispatch<React.SetStateAction<number>>
   hearts: number
 }
 
@@ -28,7 +25,7 @@ export default function BuzzPlayer({
   playingId,
   setPlayingId,
   hearts,
-}: buzzPlayerProps): JSX.Element {
+}: BuzzPlayerProps): JSX.Element {
   return (
     <section id={title.replace(/ /g, "-").toLowerCase()}>
       <SongTitle>{title}</SongTitle>
@@ -41,9 +38,8 @@ export default function BuzzPlayer({
       <CreditsContainer>
         <MetaLeftContainer>
           <Heart title={title} count={hearts} />
-          <DownloadLink href={mp3} download>
-            Download
-          </DownloadLink>
+          <Share />
+          <Download href={mp3} />
         </MetaLeftContainer>
         <Credits>
           {`Music by ${credits}`}
