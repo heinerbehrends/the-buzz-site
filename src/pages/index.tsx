@@ -11,6 +11,7 @@ import { MainContainer } from "../styles/pageStyles"
 import Footer from "../components/Footer"
 import useParallax from "../utils/useParallax"
 import useBodySize from "../utils/useBodySize"
+import Seo from "../components/Seo"
 
 const FixedContainer = styled.div`
   position: fixed;
@@ -25,6 +26,7 @@ export default function Home() {
   const { bodyWidth, bodyHeight } = useBodySize()
   return (
     <>
+      <Seo />
       <GlobalStyle bodyHeight={bodyHeight} />
       <FixedContainer>
         <VideoWall
