@@ -62,7 +62,6 @@ export const TimeDisplayStyled = styled(TimeDisplay)`
 
 export const IconsContainer = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   @media screen and (min-width: 480px) {
