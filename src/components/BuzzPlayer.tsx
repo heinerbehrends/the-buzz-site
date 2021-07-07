@@ -2,7 +2,7 @@ import React from "react"
 import CustomPlayer from "./CustomPlayer"
 import { SongTitle } from "../styles/headingStyles"
 import { CreditsContainer } from "../styles/playerGradientStyles"
-import { PlayerLink, Credits, MetaLeftContainer } from "../styles/playerStyles"
+import { IconsContainer } from "../styles/playerStyles"
 import Heart from "./Heart"
 import Share from "./Share"
 import Download from "./Download"
@@ -37,12 +37,12 @@ export default function BuzzPlayer({
         setIsPlaying={setPlayingId}
       />
       <CreditsContainer>
-        <MetaLeftContainer>
+        <IconsContainer>
           <Heart title={title} count={hearts} />
           <Share />
           <Download href={mp3} />
           <SongInfo credits={credits} />
-        </MetaLeftContainer>
+        </IconsContainer>
       </CreditsContainer>
     </section>
   )
