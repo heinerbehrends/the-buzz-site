@@ -20,7 +20,7 @@ export const MainHeading = styled.h1`
 `
 export const ConnectHeading = styled.h3`
   font-size: 9vw;
-  font-weight: 500;
+  font-weight: 800;
   text-align: center;
   letter-spacing: -0.07em;
   margin: 0;
@@ -43,7 +43,7 @@ export const SongTitle = styled.h2`
   font-family: "Rock Salt";
   font-weight: 400;
   font-size: max(4vw, 20px);
-  padding: 2rem 0 1rem 1rem;
+  padding: 3rem 0 0.25rem 1rem;
   text-align: left;
   color: var(--primary-color);
   text-shadow: 0px 0px 0.3em rgba(26, 223, 218, 1), 0px 0px 1em rgba(0, 0, 0, 1);
