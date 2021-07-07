@@ -10,7 +10,7 @@ interface customPlayerProps {
   audioFile: string
   id: number
   isPlaying: null | number
-  setIsPlaying: Function
+  setIsPlaying: React.Dispatch<React.SetStateAction<number>>
 }
 
 export default function CustomPlayer({
