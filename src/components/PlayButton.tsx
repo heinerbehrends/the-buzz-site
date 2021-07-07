@@ -4,9 +4,9 @@ import Pause from "../icons/pause.svg"
 
 interface playButtonProps {
   paused: boolean
-  play: Function
-  pause: Function
-  setIsPlaying: Function
+  play: () => void | Promise<void>
+  pause: () => void
+  setIsPlaying: React.Dispatch<React.SetStateAction<number>>
   id: number
   className?: string
 }
