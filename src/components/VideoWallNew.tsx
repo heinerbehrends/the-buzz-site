@@ -7,6 +7,7 @@ export default function VideoWallNew() {
       src="../images/videowall-new.jpg"
       alt="background image"
       width={768}
+      placeholder={"blurred"}
     />
   )
 }
