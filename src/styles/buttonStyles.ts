@@ -5,9 +5,8 @@ import { hoverStyle } from "./playerStyles"
 
 const sharedButtonStyles = css`
   fill: var(--white-color);
-  width: max(2.2vw, 20px);
+  width: max(2vw, 20px);
   display: grid;
-  /* padding: 1vw; */
   align-items: center;
   justify-content: center;
   border: none;
