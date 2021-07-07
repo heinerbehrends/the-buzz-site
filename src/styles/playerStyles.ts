@@ -16,6 +16,7 @@ export const Credits = styled.p`
 export const hoverStyle = css`
   :hover {
     filter: drop-shadow(0 0 2px white) drop-shadow(0 0 4px white);
+    text-shadow: none;
   }
 `
 

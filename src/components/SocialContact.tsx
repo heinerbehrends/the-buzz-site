@@ -19,7 +19,17 @@ const SocialContainer = styled.a`
   }
 `
 
-export default function SocialContact({ icon, link, linkText }) {
+type SocialContactProps = {
+  icon: JSX.Element
+  link: string
+  linkText: string
+}
+
+export default function SocialContact({
+  icon,
+  link,
+  linkText,
+}: SocialContactProps) {
   return (
     <SocialContainer href={link}>
       {icon}
