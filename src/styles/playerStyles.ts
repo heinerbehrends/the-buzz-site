@@ -59,7 +59,7 @@ export const TimeDisplayStyled = styled(TimeDisplay)`
   }
 `
 
-export const MetaLeftContainer = styled.div`
+export const IconsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
