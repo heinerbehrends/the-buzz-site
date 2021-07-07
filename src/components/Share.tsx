@@ -7,7 +7,7 @@ export default function Share() {
 
   return (
     <>
-      <IconButton onClick={() => setIsOpen(!isOpen)}>
+      <IconButton title="Share this site" onClick={() => setIsOpen(!isOpen)}>
         <ShareIcon
           style={{
             fill: "white",

@@ -6,7 +6,7 @@ export default function SongInfo({ credits }: { credits: string }) {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <>
-      <IconButton onClick={() => setIsOpen(!isOpen)}>
+      <IconButton title="Show credits" onClick={() => setIsOpen(!isOpen)}>
         <InfoIcon style={{ fill: "white", opacity: 0.75 }} />
       </IconButton>
       {isOpen ? (

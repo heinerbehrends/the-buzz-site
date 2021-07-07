@@ -41,6 +41,7 @@ export default function Heart({ title, count }: HeartType) {
       : hearts - count
   return (
     <HeartContainer
+      title={"Add a heart"}
       onClick={(event: React.MouseEvent<HTMLElement>) => {
         // allow user to add up to 16 hearts
         if (hearts - count < 17) {
