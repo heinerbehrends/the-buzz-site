@@ -19,7 +19,7 @@ export default function ProgressBar({
   seek,
   duration,
 }: statusbarProps): JSX.Element {
-  const container: { current: HTMLDivElement } = useRef(null)
+  const container: { current: HTMLDivElement | null } = useRef(null)
   return (
     <ProgressBarContainer ref={container}>
       <Invisible id="invisible" />
