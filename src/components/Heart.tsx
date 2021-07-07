@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import HeartIcon from "../icons/heart.svg"
-import { HeartContainer } from "../styles/playerStyles"
+import { HeartButton } from "../styles/playerStyles"
 import { HeartType } from "./MultiplePlayers"
 
 export default function Heart({ title, count }: HeartType) {
@@ -40,7 +40,7 @@ export default function Heart({ title, count }: HeartType) {
       ? heartColors.length - 1
       : hearts - count
   return (
-    <HeartContainer
+    <HeartButton
       title={"Add a heart"}
       onClick={(event: React.MouseEvent<HTMLElement>) => {
         // allow user to add up to 16 hearts
@@ -62,6 +62,6 @@ export default function Heart({ title, count }: HeartType) {
         }}
       />
       <span style={{ fontSize: "18px", color: "white" }}>{hearts}</span>
-    </HeartContainer>
+    </HeartButton>
   )
 }

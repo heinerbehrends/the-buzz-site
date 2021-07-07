@@ -27,7 +27,7 @@ const mediumFontSize = css`
   }
 `
 
-const focusStyle = css`
+export const focusStyle = css`
   :focus {
     outline-style: none;
     box-shadow: none;
@@ -80,7 +80,7 @@ export const IconButton = styled.button`
   ${focusStyle}
 `
 
-export const HeartContainer = styled.button`
+export const HeartButton = styled.button`
   display: flex;
   align-items: center;
   padding-right: 16px;
