@@ -8,6 +8,7 @@ export default function EmailIcon() {
         src="../images/the-buzz-email.png"
         alt="email icon"
         style={{ padding: 0 }}
+        placeholder="none"
       />
     </div>
   )

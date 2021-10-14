@@ -8,6 +8,7 @@ export default function FacebookIcon() {
         src="../images/the-buzz-facebook.png"
         alt="Facebook icon"
         style={{ padding: 0 }}
+        placeholder="none"
       />
     </div>
   )
