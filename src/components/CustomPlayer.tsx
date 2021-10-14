@@ -29,8 +29,10 @@ export default function CustomPlayer({
   useEffect(() => {
     const percentElapsed = (time / duration) * 100
     setElapsed(percentElapsed)
-  }, [time, duration, setElapsed, percentElapsed])
+  }, [time, duration])
+  // stop when a different songs plays
   if (id !== isPlaying) pause()
+
   return (
     <PlayerContainer>
       <PlayButtonStyled
