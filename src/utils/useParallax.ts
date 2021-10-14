@@ -1,14 +1,10 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 
 export default function useParallax() {
-  const [scrollTop, setScrollTop] = useState(0)
-  function handleScroll() {
-    setScrollTop(window.pageYOffset)
-  }
+  if (typeof window === "undefined") return
   useEffect(() => {
-    const isBrowser = typeof window !== `undefined`
-    if (isBrowser) {
-      window.addEventListener("scroll", handleScroll)
+    function getScrollTop() {
+      return window.pageYOffset
     }
     const background = document.getElementById("background")
     const foreground = document.getElementById("foreground")
@@ -19,10 +15,19 @@ export default function useParallax() {
         )
         return
       }
-      background.style.transform = `translate3d(0, ${scrollTop * -1}px, 0)`
-      foreground.style.transform = `translate3d(0, ${scrollTop * -1.6}px, 0)`
+      // the ratio between the scrolling speed of the foreground vs the background layer
+      const scrollSpeedDifference = 1.6
+      background.style.transform = `translateY(${getScrollTop() * -1}px)`
+      foreground.style.transform = `translateY(${
+        getScrollTop() * -scrollSpeedDifference
+      }px)`
+    }
+
+    function handleScrollAnimation() {
       requestAnimationFrame(updateScroll)
     }
-    requestAnimationFrame(updateScroll)
-  }, [scrollTop, setScrollTop])
+    window.addEventListener("scroll", handleScrollAnimation)
+
+    return () => window.removeEventListener("scroll", handleScrollAnimation)
+  }, [])
 }
